@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+
+<head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <title>Eventify</title>
+
+  <style></style>
+
+</head>
+
+<body>
+
+  <!-- Header Start -->
+
+  <header class="pt-3 text-white">
+    <img src="assets/img/logo.png" alt="Eventify" style="height: 80px; display: block; margin: 0 auto" />
+    <h1 class="mt-2 text-center">Eventify</h1>
+
+    <!-- Navbar Start -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow p-1">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="index.html">الرئيسية</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav w-100 justify-content-around ps-5">
+            <li class="nav-item pe-5 ps-3">
+              <a href="events.html" class="navbar-brand nav-link active text-light">
+                جميع الفعاليات
+              </a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="contact.html" class="navbar-brand nav-link active text-light">اتصل بنا</a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="about.html" class="navbar-brand nav-link active text-light">حول الموقع</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <!-- Scroll to top button -->
+
+    <button id="scroll_top" class="btn btn-primary position-fixed btn_darkmode"
+      style="bottom: 60px; right: 25px; display: none; border-radius: 50%">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+  </header>
+
+  <!-- Header End -->
+
+  <!-- Main Start -->
+
+  <main class="container-fluid my-5">
+
+    <!-- section 1 -->
+
+    <h2>أحدث الفعاليات :</h2>
+    <section class="slid-container d-flex overflow-auto p-1">
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+        data-start="2026-05-05" data-end="2026-05-10">
+        <span class="badge-new">NEW</span>
+        <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">سبورت X</h5>
+          <p class="card-text">التصنيف : رياضيه</p>
+          <p>الموقع : حمص </p>
+          <p>
+            التاريخ : من 5/5/2026 وإلى 5/10/2026
+          </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=3" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural family"
+        data-start="2026-05-16" data-end="2026-05-30">
+        <span class="badge-new">NEW</span>
+        <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">منتدى المعرفة</h5>
+          <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+          <p>الموقع : ادلب</p>
+          <p>
+            التاريخ : من 5/16/2026 وإلى 5/30/2026
+          </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- section 2" -->
+
+    <h2 class="mt-5 mb-4">فعاليات بارزة لهذا الأسبوع :</h2>
+
+    <section class="slid-container d-flex overflow-auto p-1">
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family cultural"
+        data-start="2026-04-05" data-end="2026-04-10">
+        <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+          <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+          <p>الموقع : دمشق</p>
+          <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+        data-start="2026-04-12" data-end="2026-04-15">
+        <img src="assets/img/art/art1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">مركز الفنون SVU</h5>
+          <p class="card-text">التصنيف : فنيه</p>
+          <p>الموقع : دير الزور</p>
+          <p> التاريخ : من 4/12/2026 وإلى 4/15/2026 </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=2" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+        data-start="2026-04-27" data-end="2026-04-30">
+        <img src="assets/img/family/family2.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">عائلة الجيل القادم</h5>
+          <p class="card-text">التصنيف : عائليه</p>
+          <p>الموقع :اللاذقية</p>
+          <p> التاريخ : من 4/27/2026 وإلى 4/30/2026 </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=4" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- section 3 -->
+
+    <h2 class="my-4">تصنيفات :</h2>
+
+    <button type="button" class="btn btn-success filter-btn" data-category="all">
+      الكل
+    </button>
+    <button type="button" class="btn btn-secondary filter-btn" data-category="sport">
+      رياضة
+    </button>
+    <button type="button" class="btn btn-primary filter-btn" data-category="cultural">
+      ثقافة
+    </button>
+    <button type="button" class="btn btn-info filter-btn" data-category="art">
+      فن
+    </button>
+
+    <section class="badge-container slid-container d-flex overflow-auto p-1 pt-3">
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+        data-start="2026-05-05" data-end="2026-05-10">
+        <span class="badge-new">NEW</span>
+        <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">سبورت X</h5>
+          <p class="card-text">التصنيف : رياضيه</p>
+          <p>الموقع : حمص </p>
+          <p>
+            التاريخ : من 5/5/2026 وإلى 5/10/2026
+          </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=3" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+        data-start="2026-04-28" data-end="2026-04-30">
+        <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">نُقطة الثقافة</h5>
+          <p class="card-text">التصنيف : ثقافية</p>
+          <p>الموقع : دمشق</p>
+          <p>
+            التاريخ : من 4/28/2026 وإلى 4/30/2026
+          </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=11" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+
+      </div>
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport cultural"
+        data-start="2026-04-30" data-end="2026-05-03">
+        <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">إيفولف أثليتكس</h5>
+          <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+          <p>الموقع : طرطوس</p>
+          <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+        data-start="2026-04-12" data-end="2026-04-15">
+        <img src="assets/img/art/art1.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">مركز الفنون SVU</h5>
+          <p class="card-text">التصنيف : فنيه</p>
+          <p>الموقع : دير الزور</p>
+          <p> التاريخ : من 4/12/2026 وإلى 4/15/2026 </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=2" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+      <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+        data-start="2026-05-12" data-end="2026-05-19">
+        <img src="assets/img/art/art2.jpg" class="card-img-top" alt="Eventify" />
+        <div class="card-body d-flex flex-column">
+          <h5 class="card-title">المستقبل الإبداعي</h5>
+          <p class="card-text">التصنيف : فنيه</p>
+          <p>الموقع : حماه</p>
+          <p>
+            التاريخ : من 5/12/2026 وإلى 5/19/2026
+          </p>
+          <p>
+            لمزيد من المعلومات اذهب الى التفاصيل
+          </p>
+          <a href="event.html?id=7" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+        </div>
+      </div>
+
+      <div class="card flex-shrink-0 shadow text-center " style="width: 16rem; display: flex">
+        <div class="card-body d-flex flex-column justify-content-center flex-grow-1">
+          <h5 class="card-title text-primary">عرض كل الفعاليات</h5>
+          <p class="card-text">اضغط هنا للانتقال إلى صفحة جميع الفعاليات</p>
+        </div>
+        <div class="p-3">
+          <a href="events.html" class="btn btn-outline-primary w-100">عرض الكل</a>
+        </div>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- Main End -->
+
+  <!-- Footer Start -->
+
+  <footer class=" text-white py-1">
+    <div class="d-flex justify-content-center align-items-center">
+      <span>جميع الحقوق محفوظة 2026 &copy;</span>
+      <a href="https://instagram.com" class="text-white mx-2 fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com" class="text-white mx-2 fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="https://t.me" class="text-white mx-2 fs-5"><i class="bi bi-telegram"></i></a>
+    </div>
+
+  </footer>
+
+  <!-- Footer End -->
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script></script>
+
+</body>
+
+</html>
