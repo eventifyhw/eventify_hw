@@ -1,11 +1,463 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <title>Eventify</title>
+  <style>
+    .search-bar {
+      max-width: 300px;
+      margin: 20px auto;
+    }
+
+    #filter_options {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 6px;
+      background: #f9f9f9;
+    }
+  </style>
 </head>
+
 <body>
-    
+  <!-- Header Start -->
+
+  <header class="pt-3 text-white">
+
+    <img src="assets/img/logo.png" alt="Eventify" style="height: 80px; display: block; margin: 0 auto" />
+    <h1 class="mt-2 text-center">Eventify</h1>
+
+    <!-- Navbar Start -->
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow p-1">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="index.html">الرئيسية</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav w-100 justify-content-around ps-5">
+            <li class="nav-item pe-5 ps-3">
+              <a href="events.html" class="navbar-brand nav-link active text-light">
+                جميع الفعاليات
+              </a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="contact.html" class="navbar-brand nav-link active text-light">اتصل بنا</a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="about.html" class="navbar-brand nav-link active text-light">حول الموقع</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Navbar End -->
+
+    <button id="scroll_top" class="btn btn-primary position-fixed btn_darkmode"
+      style="bottom: 60px; right: 25px; display: none; border-radius: 50%">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+
+  </header>
+
+  <!-- Header End -->
+
+  <!-- Main Start -->
+
+  <main class="container-fluid mb-5">
+
+    <!-- search bar and filter buuton -->
+
+    <div>
+      <form class="d-flex search-bar">
+        <input class="form-control" id="search_input" type="search" placeholder="ابحث عن فعاليتك" aria-label="Search"
+          style="border-radius: 45px" />
+      </form>
+
+      <div class="text-center mb-3">
+        <button id="filter_toggle" class="btn btn-primary" style="border-radius: 45px">
+          فلترة
+        </button>
+      </div>
+
+      <div id="filter_options" class="d-none text-center" style="border: solid 2px black">
+        <div class="mb-3">
+          <label for="date_from" class="form-label">التاريخ (من - إلى)</label>
+          <input type="date" id="date_from" class="form-control mb-2" />
+          <input type="date" id="date_to" class="form-control" />
+        </div>
+
+        <div class="mb-3">
+          <label for="place_filter" class="form-label">المكان</label>
+          <select id="place_filter" class="form-select">
+            <option value="all">الكل</option>
+            <option value="دمشق">دمشق</option>
+            <option value="حلب">حلب</option>
+            <option value="اللاذقية">اللاذقية</option>
+            <option value="الحسكة">الحسكة</option>
+            <option value="دير الزور">دير الزور</option>
+            <option value="القنيطرة">القنيطرة</option>
+            <option value="درعا">درعا</option>
+            <option value="طرطوس">طرطوس</option>
+            <option value="ادلب">ادلب</option>
+            <option value="السويداء">السويداء</option>
+            <option value="حمص">حمص</option>
+            <option value="حماه">حماه</option>
+          </select>
+        </div>
+
+        <div class="mb-3">
+          <label for="type_filter" class="form-label">النوع</label>
+          <select id="type_filter" class="form-select">
+            <option value="all">الكل</option>
+            <option value="sport">رياضة</option>
+            <option value="cultural">ثقافة</option>
+            <option value="art">فن</option>
+            <option value="family">عائلي</option>
+          </select>
+        </div>
+      </div>
+    </div>
+
+    <div id="cards_wrapper">
+
+      <!-- section 1 -->
+
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+          data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+          <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+            <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+            <p>الموقع : دمشق</p>
+            <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+          data-start="2026-04-12" data-end="2026-04-15">
+          <img src="assets/img/art/art1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">مركز الفنون SVU</h5>
+            <p class="card-text">التصنيف : فنيه</p>
+            <p>الموقع : دير الزور</p>
+            <p> التاريخ : من 4/12/2026 وإلى 4/15/2026 </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=2" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+          data-start="2026-05-05" data-end="2026-05-10">
+          <span class="badge-new">NEW</span>
+          <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">سبورت X</h5>
+            <p class="card-text">التصنيف : رياضيه</p>
+            <p>الموقع : حمص </p>
+            <p>
+              التاريخ : من 5/5/2026 وإلى 5/10/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=3" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+          data-start="2026-04-27" data-end="2026-04-30">
+          <img src="assets/img/family/family2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">عائلة الجيل القادم</h5>
+            <p class="card-text">التصنيف : عائليه</p>
+            <p>الموقع :اللاذقية</p>
+            <p> التاريخ : من 4/27/2026 وإلى 4/30/2026 </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=4" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport cultural"
+          data-start="2026-04-30" data-end="2026-05-03">
+          <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">إيفولف أثليتكس</h5>
+            <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+            <p>الموقع : طرطوس</p>
+            <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- section 2 -->
+
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+          data-start="2026-06-24" data-end="2026-06-28">
+          <img src="assets/img/sport/sport3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">يوم الرياضة الرقمي</h5>
+            <p class="card-text">التصنيف : رياضيه</p>
+            <p>الموقع : حلب</p>
+            <p> التاريخ : من 6/24/2026 وإلى 6/28/2026</p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=6" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+          data-start="2026-05-12" data-end="2026-05-19">
+          <img src="assets/img/art/art2.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">المستقبل الإبداعي</h5>
+            <p class="card-text">التصنيف : فنيه</p>
+            <p>الموقع : حماه</p>
+            <p>
+              التاريخ : من 5/12/2026 وإلى 5/19/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=7" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+          data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+          <span class="badge-new">NEW</span>
+          <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">منتدى المعرفة</h5>
+            <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+            <p>الموقع : ادلب</p>
+            <p>
+              التاريخ : من 5/16/2026 وإلى 5/30/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+          data-start="2026-04-25" data-end="2026-04-27">
+          <img src="assets/img/family/family3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">وقت العائلة</h5>
+            <p class="card-text">التصنيف : عائليه</p>
+            <p>الموقع : الحسكة</p>
+            <p>
+              التاريخ : من 4/25/2026 وإلى 4/27/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=9" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+          data-start="2026-06-10" data-end="2026-06-13">
+          <img src="assets/img/cultural/cultural3.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">تبادل الأفكار</h5>
+            <p class="card-text">التصنيف : ثقافيه</p>
+            <p>الموقع : حمص</p>
+            <p>
+              التاريخ : من 6/10/2026 وإلى 6/13/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=10" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+        </div>
+
+      </section>
+
+      <!-- section 3 -->
+
+      <section class="slid-container d-flex overflow-auto p-1 my-3">
+
+        <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+          data-start="2026-04-28" data-end="2026-04-30">
+          <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title">نُقطة الثقافة</h5>
+            <p class="card-text">التصنيف : ثقافية</p>
+            <p>الموقع : دمشق</p>
+            <p>
+              التاريخ : من 4/28/2026 وإلى 4/30/2026
+            </p>
+            <p>
+              لمزيد من المعلومات اذهب الى التفاصيل
+            </p>
+            <a href="event.html?id=11" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+
+  </main>
+
+  <!-- Main End -->
+
+  <!-- Footer Start -->
+
+  <footer class="text-white py-1">
+    <div class="d-flex justify-content-center align-items-center">
+      <span>جميع الحقوق محفوظة 2026 &copy;</span>
+      <a href="https://instagram.com" class="text-white mx-2 fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com" class="text-white mx-2 fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="https://t.me" class="text-white mx-2 fs-5"><i class="bi bi-telegram"></i></a>
+    </div>
+  </footer>
+
+  <!-- Footer End -->
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", function () {
+      const search_input = document.getElementById("search_input");
+      const cards_wrapper = document.getElementById("cards_wrapper");
+      const all_cards = Array.from(document.querySelectorAll(".card"));
+
+      const filter_toggle = document.getElementById("filter_toggle");
+      const filter_options = document.getElementById("filter_options");
+      const date_from = document.getElementById("date_from");
+      const date_to = document.getElementById("date_to");
+      const place_filter = document.getElementById("place_filter");
+      const type_filter = document.getElementById("type_filter");
+
+      filter_toggle.addEventListener("click", () => {
+        filter_options.classList.toggle("d-none");
+      });
+
+      function applyFilters() {
+        const q = (search_input.value || "").trim().toLowerCase();
+        const from = date_from.value ? new Date(date_from.value) : null;
+        const to = date_to.value ? new Date(date_to.value) : null;
+        const place = place_filter.value;
+        const type = type_filter.value;
+
+        const filtered = all_cards.filter((card) => {
+          const title_element = card.querySelector(".card-title");
+          const title = title_element
+            ? title_element.innerText.toLowerCase()
+            : "";
+          const text = card.innerText.toLowerCase();
+
+          const match_search = !q || title.includes(q);
+          const match_place =
+            place === "all" || text.includes(place.toLowerCase());
+          const match_type =
+            type === "all" || card.dataset.category.split(" ").includes(type);
+
+          let match_date = true;
+          function parseDate(dateStr) {
+            const [year, month, day] = dateStr.split("-");
+            return new Date(year, month - 1, day); // local date
+          }
+
+          const startDate = card.dataset.start
+            ? parseDate(card.dataset.start)
+            : null;
+
+          const endDate = card.dataset.end
+            ? parseDate(card.dataset.end)
+            : null;
+          if (startDate && endDate) {
+            if (from && endDate < from) match_date = false;
+            if (to && startDate > to) match_date = false;
+          }
+
+          if (startDate && isNaN(startDate)) match_date = false;
+          if (endDate && isNaN(endDate)) match_date = false;
+
+          return match_search && match_place && match_type && match_date;
+        });
+
+        renderCards(filtered);
+      }
+
+      function renderCards(cards) {
+        cards_wrapper.innerHTML = "";
+
+        if (cards.length === 0) {
+          cards_wrapper.innerHTML = `
+          <div class="alert alert-warning text-center my-4" role="alert">
+             لا توجد فعاليات مطابقة لخيارات البحث الحالية.
+          </div>`;
+          return;
+        }
+
+        let slider = null;
+        cards.forEach((card, index) => {
+          if (index % 5 === 0) {
+            slider = document.createElement("div");
+            slider.className =
+              "slid-container d-flex overflow-auto gap-2 p-1 mb-3";
+            cards_wrapper.appendChild(slider);
+          }
+          slider.appendChild(card);
+          card.style.display = "inline-flex";
+        });
+
+        const allSliders = cards_wrapper.querySelectorAll(".slid-container");
+        allSliders.forEach((slid) => {
+          slid.style.overflowX = "auto";
+          slid.style.scrollbarWidth = "thin";
+        });
+      }
+
+      [search_input, date_from, date_to, place_filter, type_filter].forEach(
+        (el) => {
+          el.addEventListener("input", applyFilters);
+          el.addEventListener("change", applyFilters);
+        },
+      );
+
+      renderCards(all_cards);
+    });
+  </script>
 </body>
+
 </html>
