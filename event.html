@@ -1,11 +1,1565 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+
+  <title>Eventify</title>
+
+  <style>
+    .bg-img {
+      object-fit: cover !important;
+      height: auto !important;
+    }
+
+    .event-details {
+      display: none;
+    }
+
+    iframe {
+      border-radius: 8px;
+    }
+
+    .event-thumb {
+      width: 100px !important;
+      height: 100px !important;
+      border-radius: 50% !important;
+      object-fit: cover !important;
+      border: 3px solid var(--bs-primary) !important;
+      cursor: pointer !important;
+      transition: transform 0.3s ease, box-shadow 0.3s ease !important;
+    }
+
+    .event-thumb:hover {
+      transform: scale(1.1) !important;
+      box-shadow: 0 0 10px rgba(13, 110, 253, 0.4) !important;
+    }
+
+
+    .modal-content img {
+      border-radius: 10px !important;
+      max-height: 80vh !important;
+      object-fit: contain !important;
+    }
+  </style>
+
 </head>
+
 <body>
+
+  <!-- Header Start -->
+
+  <header class="pt-3 text-white">
+    <img src="assets/img/logo.png" alt="Eventify" style="height: 80px; display: block; margin: 0 auto" />
+    <h1 class="mt-2 text-center">Eventify</h1>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow p-1">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="index.html">الرئيسية</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav w-100 justify-content-around ps-5">
+            <li class="nav-item pe-5 ps-3">
+              <a href="events.html" class="navbar-brand nav-link active text-light">
+                جميع الفعاليات
+              </a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="contact.html" class="navbar-brand nav-link active text-light">اتصل بنا</a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="about.html" class="navbar-brand nav-link active text-light">حول الموقع</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Scroll to top button -->
+    <button id="scroll_top" class="btn btn-primary position-fixed btn_darkmode"
+      style="bottom: 60px; right: 25px; display: none; border-radius: 50%">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </header>
+
+  <!-- Header End -->
+
+  <!-- Main Start -->
+
+  <main class="container-fluid my-4">
+
+    <div id="shareAlert" class="container mt-3"></div>
+    <div id="addAlert" class="container mt-3"></div>
+
     
+<center>
+      <!-- يوم العائلة الرقمي SVU -->
+      <div id="1" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> يوم العائلة الرقمي SVU </h3>
+        <p>الموقع : دمشق - كفرسوسة- الجامعة الافتراضيةالسورية</p>
+        <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+        <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+        <h5>
+          فعالية "يوم العائلة الرقمي SVU " بالتعاون مع الجامعة الافتراضية
+          السورية تُقام في مكان حديث ومناسب للعائلات، يجمع بين التعلم
+          والأنشطة التفاعلية
+        </h5>
+
+        <img src="assets/img/family/family1.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/family/family2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal1">
+            <img src="assets/img/family/family3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal2">
+          </div>
+
+          <div class="modal fade" id="modal1" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5595.085141948671!2d36.275721993280094!3d33.50508364878863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e166219fc975%3A0xa9501798ee9b31df!2z2KfZhNis2KfZhdi52Kkg2KfZhNin2YHYqtix2KfYttmK2Kkg2KfZhNiz2YjYsdmK2KkgLSDZhdix2YPYsiDYp9mE2KrYudmE2YrZhSDZiNin2YTYqtiv2LHZitioINin2YTZhdiz2KrZhdixIExMQw!5e0!3m2!1sen!2s!4v1776724719066!5m2!1sen!2s"
+          class="w-100" height="500" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">منتدى المعرفة</h5>
+                <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+                <p>الموقع : ادلب</p>
+                <p>
+                  التاريخ : من 5/16/2026 وإلى 5/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-06-10" data-end="2026-06-13">
+              <img src="assets/img/cultural/cultural3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">تبادل الأفكار</h5>
+                <p class="card-text">التصنيف : ثقافيه</p>
+                <p>الموقع : حمص</p>
+                <p>
+                  التاريخ : من 6/10/2026 وإلى 6/13/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=10" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-04-28" data-end="2026-04-30">
+              <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">نُقطة الثقافة</h5>
+                <p class="card-text">التصنيف : ثقافية</p>
+                <p>الموقع : دمشق</p>
+                <p>
+                  التاريخ : من 4/28/2026 وإلى 4/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=11" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- مركز الفنون SVU -->
+      <div id="2" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> مركز الفنون SVU </h3>
+        <p>الموقع : دير الزور</p>
+        <p> التاريخ : من 4/12/2026 وإلى 4/15/2026 </p>
+        <p class="card-text">التصنيف : فنيه</p>
+        <h5>
+          تُقام الفعالية الفنية في موقع مميز يوفّر أجواء ملهمة للإبداع，
+          حيث يلتقي الفن مع التفاعل العائلي ضمن بيئة مريحة ومناسبة لجميع
+          الأعمار.
+        </h5>
+
+        <img src="assets/img/art/art1.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/art/art2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal3">
+            <img src="assets/img/art/art3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal4">
+            <img src="assets/img/art/art4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal5">
+          </div>
+
+          <div class="modal fade" id="modal3" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/art/art2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+          <div class="modal fade" id="modal4" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/art/art3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal5" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/art/art4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52077.23332572248!2d40.09677610434053!3d35.33511521113307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x154817f4aeddb761%3A0x4cbc9d58e981374f!2sDeir%20ez-Zur%2C%20Syria!5e0!3m2!1sen!2s!4v1776724963153!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+              data-start="2026-05-12" data-end="2026-05-19">
+              <img src="assets/img/art/art2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">المستقبل الإبداعي</h5>
+                <p class="card-text">التصنيف : فنيه</p>
+                <p>الموقع : حماه</p>
+                <p>
+                  التاريخ : من 5/12/2026 وإلى 5/19/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=7" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- سبورت X -->
+      <div id="3" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> سبورت X </h3>
+        <p>الموقع : حمص </p>
+        <p> التاريخ : من 5/5/2026 وإلى 5/10/2026</p>
+        <p class="card-text">التصنيف : رياضيه</p>
+        <h5>
+          تُقام الفعالية الرياضية في موقع مجهّز بمرافق حديثة ومساحات
+          واسعة، يوفّر بيئة مثالية للتنافس والحركة ضمن أجواء حماسية
+          ومنظمة.
+        </h5>
+
+        <img src="assets/img/sport/sport1.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/sport/sport2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal6">
+            <img src="assets/img/sport/sport3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal7">
+            <img src="assets/img/sport/sport4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal8">
+          </div>
+
+          <div class="modal fade" id="modal6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal7" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal8" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104928.15795750252!2d36.59468074863927!3d34.730269956455125!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15230e9047c7c0fb%3A0xac367e06303788d0!2zSG9tc-KAjiwgU3lyaWE!5e0!3m2!1sen!2s!4v1776725018898!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+              data-start="2026-06-24" data-end="2026-06-28">
+              <img src="assets/img/sport/sport3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم الرياضة الرقمي</h5>
+                <p class="card-text">التصنيف : رياضيه</p>
+                <p>الموقع : حلب</p>
+                <p> التاريخ : من 6/24/2026 وإلى 6/28/2026</p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=6" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- عائلة الجيل القادم -->
+      <div id="4" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> عائلة الجيل القادم </h3>
+        <p>الموقع :اللاذقية</p>
+        <p> التاريخ : من 4/27/2026 وإلى 4/30/2026 </p>
+        <p class="card-text">التصنيف : عائليه</p>
+        <h5>
+          يُقام الحدث في بيئة جامعية منظمة ومجهزة، تتيح مساحات مناسبة
+          للأنشطة والفعاليات التفاعلية ضمن أجواء تعليمية مريحة وحيوية.
+        </h5>
+
+        <img src="assets/img/family/family2.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/family/family1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal9">
+            <img src="assets/img/family/family3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal10">
+          </div>
+
+
+          <div class="modal fade" id="modal9" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal10" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103885.19386428468!2d35.70961478844408!3d35.54351812261926!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1526ac2d61d4607d%3A0x8e325bf8a14195de!2sLatakia%2C%20Syria!5e0!3m2!1sen!2s!4v1776725061720!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+              <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+                <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+                <p>الموقع : دمشق</p>
+                <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">منتدى المعرفة</h5>
+                <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+                <p>الموقع : ادلب</p>
+                <p>
+                  التاريخ : من 5/16/2026 وإلى 5/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+              data-start="2026-04-25" data-end="2026-04-27">
+              <img src="assets/img/family/family3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">وقت العائلة</h5>
+                <p class="card-text">التصنيف : عائليه</p>
+                <p>الموقع : الحسكة</p>
+                <p>
+                  التاريخ : من 4/25/2026 وإلى 4/27/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=9" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- إيفولف أثليتكس -->
+      <div id="5" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> إيفولف أثليتكس </h3>
+        <p>الموقع : طرطوس</p>
+        <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+        <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+        <h5>
+          فعالية رياضية تهدف إلى تعزيز اللياقة والتطور البدني، من خلال
+          أنشطة تنافسية تفاعلية تواكب أساليب التدريب الحديثة وتدعم روح
+          التحدي.
+        </h5>
+        <img src="assets/img/sport/sport2.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/sport/sport1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal11">
+            <img src="assets/img/sport/sport3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal12">
+            <img src="assets/img/sport/sport4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal13">
+          </div>
+
+          <div class="modal fade" id="modal11" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal12" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal13" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52365.03336779853!2d35.841491298927586!3d34.886002000421335!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15217e77890fb9a3%3A0xa072a491096e24b!2zVGFydHVz4oCOLCBTeXJpYQ!5e0!3m2!1sen!2s!4v1776725109441!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+              data-start="2026-05-05" data-end="2026-05-10">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">سبورت X</h5>
+                <p class="card-text">التصنيف : رياضيه</p>
+                <p>الموقع : حمص </p>
+                <p>
+                  التاريخ : من 5/5/2026 وإلى 5/10/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=3" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+              data-start="2026-06-24" data-end="2026-06-28">
+              <img src="assets/img/sport/sport3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم الرياضة الرقمي</h5>
+                <p class="card-text">التصنيف : رياضيه</p>
+                <p>الموقع : حلب</p>
+                <p>
+                  التاريخ : من 6/24/2026 وإلى 6/28/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=6" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- يوم الرياضة الرقمي -->
+      <div id="6" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> يوم الرياضة الرقمي </h3>
+        <p>الموقع : حلب</p>
+        <p> التاريخ : من 6/24/2026 وإلى 6/28/2026</p>
+        <p class="card-text">التصنيف : رياضيه</p>
+        <h5>
+          فعالية رياضية حديثة تجمع بين النشاط
+          البدني والتقنيات الرقمية، لتقديم تجربة تفاعلية تعزز الأداء
+          وتواكب تطور عالم الرياضة.
+        </h5>
+        <img src="assets/img/sport/sport3.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/sport/sport1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_1">
+            <img src="assets/img/sport/sport2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_2">
+            <img src="assets/img/sport/sport4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_3">
+          </div>
+
+          <div class="modal fade" id="modal_1" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_2" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_3" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/sport/sport4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d103019.56928218326!2d37.06618382147203!3d36.206406407959456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152ff813b98135af%3A0x967e5e5fc542c32a!2sAleppo%2C%20Syria!5e0!3m2!1sen!2s!4v1776725158724!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="sport"
+              data-start="2026-05-05" data-end="2026-05-10">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/sport/sport1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">سبورت X</h5>
+                <p class="card-text">التصنيف : رياضيه</p>
+                <p>الموقع : حمص </p>
+                <p>
+                  التاريخ : من 5/5/2026 وإلى 5/10/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=3" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- المستقبل الإبداعي -->
+      <div id="7" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> المستقبل الإبداعي </h3>
+        <p>الموقع : حماه</p>
+        <p> التاريخ : من 5/12/2026 وإلى 5/19/2026</p>
+        <p class="card-text">التصنيف : فنيه</p>
+        <h5>
+          فعالية فنية حديثة تستشرف ملامح الإبداع القادم، حيث تلتقي الأفكار
+          المبتكرة مع التقنيات الحديثة لتقديم تجربة فنية تفاعلية ومتجددة.
+        </h5>
+
+        <img src="assets/img/art/art2.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/art/art1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_4">
+            <img src="assets/img/art/art3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_5">
+          </div>
+
+          <div class="modal fade" id="modal_4" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/art/art1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_5" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/art/art3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d52204.78877208923!2d36.709209251941516!3d35.136681728280706!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1524828fcdd5b865%3A0x62d43f56ee62b5ef!2sHama%2C%20Syria!5e0!3m2!1sen!2s!4v1776725180863!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="art"
+              data-start="2026-04-12" data-end="2026-04-15">
+              <img src="assets/img/art/art1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">مركز الفنون SVU</h5>
+                <p class="card-text">التصنيف : فنيه</p>
+                <p>الموقع : دير الزور</p>
+                <p> التاريخ : من 4/12/2026 وإلى 4/15/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=2" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- منتدى المعرفة -->
+      <div id="8" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> منتدى المعرفة </h3>
+        <p>الموقع : ادلب</p>
+        <p> التاريخ : من 5/16/2026 وإلى 5/30/2026</p>
+        <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+        <h5>
+          فعالية ثقافية تُقام في بيئة هادئة ومنظمة، تتيح مساحة لتبادل
+          الأفكار والنقاش، وتعزز التفاعل المعرفي بأسلوب بسيط ومُلهم.
+        </h5>
+
+        <img src="assets/img/cultural/cultural3.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/cultural/cultural1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_6">
+            <img src="assets/img/cultural/cultural2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_7">
+            <img src="assets/img/cultural/cultural4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_8">
+          </div>
+
+          <div class="modal fade" id="modal_6" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_7" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_8" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d51693.32230857981!2d36.55762764944198!3d35.92659621221811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x152508664354cbdf%3A0xc44836a7b49c636f!2sIdlib%2C%20Syria!5e0!3m2!1sen!2s!4v1776725232953!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+              <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+                <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+                <p>الموقع : دمشق</p>
+                <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-06-10" data-end="2026-06-13">
+              <img src="assets/img/cultural/cultural3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">تبادل الأفكار</h5>
+                <p class="card-text">التصنيف : ثقافيه</p>
+                <p>الموقع : حمص</p>
+                <p>
+                  التاريخ : من 6/10/2026 وإلى 6/13/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=10" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-04-28" data-end="2026-04-30">
+              <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">نُقطة الثقافة</h5>
+                <p class="card-text">التصنيف : ثقافية</p>
+                <p>الموقع : دمشق</p>
+                <p>
+                  التاريخ : من 4/28/2026 وإلى 4/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=11" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+              data-start="2026-04-27" data-end="2026-04-30">
+              <img src="assets/img/family/family2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">عائلة الجيل القادم</h5>
+                <p class="card-text">التصنيف : عائليه</p>
+                <p>الموقع :اللاذقية</p>
+                <p> التاريخ : من 4/27/2026 وإلى 4/30/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=4" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+              data-start="2026-04-25" data-end="2026-04-27">
+              <img src="assets/img/family/family3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">وقت العائلة</h5>
+                <p class="card-text">التصنيف : عائليه</p>
+                <p>الموقع : الحسكة</p>
+                <p>
+                  التاريخ : من 4/25/2026 وإلى 4/27/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=9" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- وقت العائلة -->
+      <div id="9" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> وقت العائلة </h3>
+        <p>الموقع : الحسكة</p>
+        <p> التاريخ : من 4/25/2026 وإلى 4/27/2026</p>
+        <p class="card-text">التصنيف : عائليه</p>
+        <h5>
+          يُقام الحدث في مساحة مفتوحة وطبيعية تمنح أجواء مريحة ومناسبة
+          للعائلات، وتوفّر بيئة مثالية للأنشطة الترفيهية والتفاعل
+          الاجتماعي
+        </h5>
+        <img src="assets/img/family/family3.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/family/family1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_9">
+            <img src="assets/img/family/family2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_10">
+          </div>
+
+          <div class="modal fade" id="modal_9" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_10" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/family/family2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1644173.2692430578!2d39.62054471462753!3d36.402519154580034!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x400976912dee2dfb%3A0x1735b67e4a2454b0!2sAl-Hasakah%20Governorate%2C%20Syria!5e0!3m2!1sen!2s!4v1776725267646!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+              <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+                <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+                <p>الموقع : دمشق</p>
+                <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="family"
+              data-start="2026-04-27" data-end="2026-04-30">
+              <img src="assets/img/family/family2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">عائلة الجيل القادم</h5>
+                <p class="card-text">التصنيف : عائليه</p>
+                <p>الموقع :اللاذقية</p>
+                <p> التاريخ : من 4/27/2026 وإلى 4/30/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=4" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">منتدى المعرفة</h5>
+                <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+                <p>الموقع : ادلب</p>
+                <p>
+                  التاريخ : من 5/16/2026 وإلى 5/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- تبادل الأفكار -->
+      <div id="10" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> تبادل الأفكار </h3>
+        <p>الموقع : حمص</p>
+        <p> التاريخ : من 6/10/2026 وإلى 6/13/2026</p>
+        <p class="card-text">التصنيف : ثقافيه</p>
+        <h5>
+          يُقام الحدث في بيئة ثقافية هادئة ومهيأة، تتيح مساحة مناسبة
+          للحوار وتبادل الأفكار ضمن أجواء معرفية تفاعلية ومُلهمة.
+        </h5>
+
+        <img src="assets/img/cultural/cultural3.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/cultural/cultural1.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_11">
+            <img src="assets/img/cultural/cultural2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_12">
+            <img src="assets/img/cultural/cultural4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_13">
+          </div>
+
+          <div class="modal fade" id="modal_11" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural1.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_12" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_13" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d104928.15795750251!2d36.59468074863926!3d34.73026995645513!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x15230e9047c7c0fb%3A0xac367e06303788d0!2zSG9tc-KAjiwgU3lyaWE!5e0!3m2!1sen!2s!4v1776725316282!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+              <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+                <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+                <p>الموقع : دمشق</p>
+                <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">منتدى المعرفة</h5>
+                <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+                <p>الموقع : ادلب</p>
+                <p>
+                  التاريخ : من 5/16/2026 وإلى 5/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-04-28" data-end="2026-04-30">
+              <img src="assets/img/cultural/cultural1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">نُقطة الثقافة</h5>
+                <p class="card-text">التصنيف : ثقافية</p>
+                <p>الموقع : دمشق</p>
+                <p>
+                  التاريخ : من 4/28/2026 وإلى 4/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=11" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- ====================================================================================== -->
+
+      <!-- نُقطة الثقافة -->
+      <div id="11" class="event-details card p-3 shadow-sm  col-lg-6">
+
+        <h3 class="text-primary"> نُقطة الثقافة </h3>
+        <p>الموقع : دمشق</p>
+        <p> التاريخ : من 4/28/2026 وإلى 4/30/2026</p>
+        <p class="card-text">التصنيف : ثقافية</p>
+        <h5>
+          يُقام الحدث في موقع ثقافي مميز يوفر بيئة هادئة ومنظمة، مناسبة
+          للحوار وتبادل الأفكار ضمن أجواء معرفية وتفاعلية ملهمة.
+        </h5>
+        <img src="assets/img/cultural/cultural1.jpg" class="img-fluid mb-3 w-100 bg-img" alt="">
+
+        <div class="container my-4">
+
+          <h4 class="text-primary mb-3 text-center">صور اخرى:</h4>
+
+          <div class="d-flex justify-content-center flex-wrap gap-3">
+            <img src="assets/img/cultural/cultural2.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_14">
+            <img src="assets/img/cultural/cultural3.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_15">
+            <img src="assets/img/cultural/cultural4.jpg" class="event-thumb" alt="" data-bs-toggle="modal"
+              data-bs-target="#modal_16">
+          </div>
+
+          <div class="modal fade" id="modal_14" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural2.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_15" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural3.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal fade" id="modal_16" tabindex="-1">
+            <div class="modal-dialog modal-dialog-centered">
+              <div class="modal-content bg-transparent border-0">
+                <img src="assets/img/cultural/cultural4.jpg" class="img-fluid rounded shadow">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="mb-3">
+          <button class="btn btn-success mx-1 btnShare btnShare">مشاركة</button>
+          <button class="btn btn-primary mx-1 btnAdd btnAdd"> إضافة إلى التقويم</button>
+          <a href="events.html" class="btn btn-secondary mx-1"> العودة للفعاليات</a>
+        </div>
+
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d106456.53228346398!2d36.200494040288035!3d33.50744822524293!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e6dc413cc6a7%3A0x6b9f66ebd1e394f2!2sDamascus%2C%20Syria!5e0!3m2!1sen!2s!4v1776725415368!5m2!1sen!2s"
+          class="w-100" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+        <hr class="my-5">
+
+        <div class="mb-2">
+
+          <h2>فعاليات ذات صلة : </h2>
+
+          <div class="slid-container d-flex overflow-auto p-1">
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="family cultural" data-start="2026-04-05" data-end="2026-04-10">
+              <img src="assets/img/family/family1.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">يوم العائلة الرقمي SVU</h5>
+                <p class="card-text">التصنيف : عائلي - ثقافيه</p>
+                <p>الموقع : دمشق</p>
+                <p> التاريخ : من 4/5/2026 وإلى 4/10/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=1" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="sport cultural" data-start="2026-04-30" data-end="2026-05-03">
+              <img src="assets/img/sport/sport2.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">إيفولف أثليتكس</h5>
+                <p class="card-text">التصنيف : رياضيه - ثقافيه</p>
+                <p>الموقع : طرطوس</p>
+                <p> التاريخ : من 4/30/2026 وإلى 5/3/2026 </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=5" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex"
+              data-category="cultural family" data-start="2026-05-16" data-end="2026-05-30">
+              <span class="badge-new">NEW</span>
+              <img src="assets/img/cultural/cultural4.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">منتدى المعرفة</h5>
+                <p class="card-text">التصنيف : ثقافيه - عائليه</p>
+                <p>الموقع : ادلب</p>
+                <p>
+                  التاريخ : من 5/16/2026 وإلى 5/30/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=8" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+            <div class="card flex-shrink-0 shadow" style="width: 16rem; display: inline-flex" data-category="cultural"
+              data-start="2026-06-10" data-end="2026-06-13">
+              <img src="assets/img/cultural/cultural3.jpg" class="card-img-top" alt="Eventify" />
+              <div class="card-body d-flex flex-column">
+                <h5 class="card-title">تبادل الأفكار</h5>
+                <p class="card-text">التصنيف : ثقافيه</p>
+                <p>الموقع : حمص</p>
+                <p>
+                  التاريخ : من 6/10/2026 وإلى 6/13/2026
+                </p>
+                <p>
+                  لمزيد من المعلومات اذهب الى التفاصيل
+                </p>
+                <a href="event.html?id=10" class="btn btn-outline-primary mt-auto">التفاصيل</a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+</center>
+
+  </main>
+
+  <!-- Main End -->
+
+  <!-- Footer Start -->
+
+  <footer class=" text-white py-1">
+    <div class="d-flex justify-content-center align-items-center">
+
+      <span>جميع الحقوق محفوظة 2026 &copy;</span>
+      <a href="https://instagram.com" class="text-white mx-2 fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com" class="text-white mx-2 fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="https://t.me" class="text-white mx-2 fs-5"><i class="bi bi-telegram"></i></a>
+
+    </div>
+
+  </footer>
+
+  <!-- Footer End -->
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+
+  <script>
+
+    const params = new URLSearchParams(window.location.search);
+    const eventId = params.get("id");
+
+    if (eventId) {
+      const selectedEvent = document.getElementById(eventId);
+      selectedEvent.style.display = "block";
+    }
+
+    const btnShare = document.querySelectorAll(".btnShare");
+    const btnAdd = document.querySelectorAll(".btnAdd");
+
+    btnShare.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const email_box = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="shareAlert">
+              
+            </div>
+            `;
+        document.getElementById("shareAlert").innerHTML = email_box;
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        setTimeout(() => {
+          const alert = document.getElementById("shareAlert");
+          if (alert) {
+            alert.classList.remove("show");
+            alert.classList.add("fade");
+            setTimeout(() => alert.remove(), 500);
+          }
+        }, 1500);
+      });
+    });
+
+    btnAdd.forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const email_box = `
+            <div class="alert alert-success alert-dismissible fade show" role="alert" id="addAlert">
+               تم إضافة الحدث إلى التقويم!
+            </div>
+            `;
+        document.getElementById("addAlert").innerHTML = email_box;
+
+        window.scrollTo({ top: 0, behavior: "smooth" });
+
+        setTimeout(() => {
+          const alert = document.getElementById("addAlert");
+          if (alert) {
+            alert.classList.remove("show");
+            alert.classList.add("fade");
+            setTimeout(() => alert.remove(), 500);
+          }
+        }, 1500);
+      });
+    });
+
+  </script>
+
 </body>
+
 </html>
