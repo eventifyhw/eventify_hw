@@ -1,11 +1,304 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="ar" dir="rtl">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="assets/img/logo.png" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flag-icons/css/flag-icons.min.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <title>Eventify</title>
+  <style></style>
 </head>
+
 <body>
-    
+  <!-- Header Start -->
+  <header class="pt-3 text-white">
+    <img src="assets/img/logo.png" alt="Eventify" style="height: 80px; display: block; margin: 0 auto" />
+    <h1 class="mt-2 text-center">Eventify</h1>
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-gradient shadow p-1">
+      <div class="container-fluid">
+        <a class="navbar-brand text-light" href="index.html">الرئيسية</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" style="filter: invert(1)"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+          <ul class="navbar-nav w-100 justify-content-around ps-5">
+            <li class="nav-item pe-5 ps-3">
+              <a href="events.html" class="navbar-brand nav-link active text-light">
+                جميع الفعاليات
+              </a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="contact.html" class="navbar-brand nav-link active text-light">اتصل بنا</a>
+            </li>
+            <li class="nav-item pe-5 ps-3">
+              <a href="about.html" class="navbar-brand nav-link active text-light">حول الموقع</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Scroll to top button -->
+    <button id="scroll_top" class="btn btn-primary position-fixed btn_darkmode"
+      style="bottom: 60px; right: 25px; display: none; border-radius: 50%">
+      <i class="bi bi-arrow-up"></i>
+    </button>
+  </header>
+
+  <!-- Header End -->
+
+  <!-- Main Start -->
+
+  <main class="container my-5 flex-grow-1 my-5">
+
+    <div class="row justify-content-center">
+
+      <div class="col-12 col-md-10 col-lg-8">
+
+        <div class="card border-primary shadow-lg">
+
+          <div class="card-header bg-primary text-white text-center fw-bold fs-5">
+            تواصل معنا
+          </div>
+
+          <div class="card-body bg-light">
+
+            <ul class="nav nav-tabs justify-content-center mb-3" id="contactTab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active fw-semibold" id="email-tab" data-bs-toggle="tab" data-bs-target="#email"
+                  type="button" role="tab">
+                  عبر البريد الإلكتروني <i class="bi bi-envelope-fill"></i>
+                </button>
+              </li>
+
+              <li class="nav-item" role="presentation">
+                <button class="nav-link fw-semibold" id="phone-tab" data-bs-toggle="tab" data-bs-target="#phone"
+                  type="button" role="tab">
+                  عبر الهاتف <i class="bi bi-telephone-fill"></i>
+                </button>
+              </li>
+
+            </ul>
+
+            <div class="tab-content" id="contactTabContent">
+
+              <div class="tab-pane fade show active" id="email" role="tabpanel">
+                <h5 class="text-primary text-center mb-3">أرسل لنا رسالة عبر البريد الإلكتروني</h5>
+
+                <form id="contact_form">
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-person-fill"></i></span>
+                    <input id="name" type="text" class="form-control" placeholder="الاسم الكامل" required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-envelope-fill"></i></span>
+                    <input id="contact_input" type="email" class="form-control" placeholder="البريد الإلكتروني"
+                      required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-chat-dots-fill"></i></span>
+                    <textarea id="message" class="form-control" rows="4" placeholder="اكتب رسالتك هنا..."
+                      required></textarea>
+                  </div>
+
+                  <div id="contact_alret" style="display:none;"></div>
+
+                  <button type="submit" class="btn btn-primary w-100 fw-semibold">
+                    <i class="bi bi-send-fill"></i> إرسال
+                  </button>
+
+                </form>
+
+              </div>
+
+              <div class="tab-pane fade" id="phone" role="tabpanel">
+                <h5 class="text-primary text-center mb-3">تواصل معنا عبر الهاتف</h5>
+
+                <form id="phone_form">
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-person-fill"></i></span>
+                    <input id="phone_name" type="text" class="form-control" placeholder="الاسم الكامل" required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-telephone-fill"></i></span>
+                    <input id="phone_number" type="text" class="form-control" placeholder="رقم الهاتف" required>
+                  </div>
+
+                  <div class="input-group mb-3">
+                    <span class="input-group-text bg-primary text-white"><i class="bi bi-chat-dots-fill"></i></span>
+                    <textarea id="phone_message" class="form-control" rows="4" placeholder="ما هو سبب الاتصال؟"
+                      required></textarea>
+                  </div>
+
+                  <div id="phone_alret" style="display:none;"></div>
+
+                  <button type="submit" class="btn btn-success w-100 fw-semibold">
+                    <i class="bi bi-telephone-outbound-fill"></i> طلب اتصال
+                  </button>
+
+                </form>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="col-12 col-md-10 col-lg-8 mt-3">
+
+        <div class="card border-primary shadow-lg">
+
+          <div class="card-header bg-primary text-white text-center fw-bold fs-5">
+            معلومات التواصل الإضافية
+          </div>
+
+          <div class="card-body bg-light text-center">
+
+            <table class="table table-bordered table-striped align-middle">
+
+              <tbody>
+
+                <tr>
+                  <th class="bg-primary text-white w-25"><i class="bi bi-telephone-fill"></i> الهاتف</th>
+                  <td class="fw-semibold">00963937130910</td>
+                </tr>
+
+                <tr>
+                  <th class="bg-primary text-white"><i class="bi bi-envelope-fill"></i> البريد الإلكتروني</th>
+                  <td><a href="mailto:info@eventify.com" class="text-decoration-none text-primary"
+                      target="_blank">info@eventify.com</a>
+                  </td>
+                </tr>
+
+                <tr>
+                  <th class="bg-primary text-white"><i class="bi bi-geo-alt-fill"></i> العنوان</th>
+                  <td>سوريا - دمشق - كفرسوسة</td>
+                </tr>
+
+                <tr>
+                  <th class="bg-primary text-white"><i class="bi bi-facebook"></i> فيسبوك</th>
+                  <td><a href="https://facebook.com" class="text-decoration-none text-primary" target="_blank">صفحتنا
+                      على فيسبوك</a></td>
+                </tr>
+
+                <tr>
+                  <th class="bg-primary text-white"><i class="bi bi-instagram"></i> إنستغرام</th>
+                  <td><a href="https://instagram.com" class="text-decoration-none text-primary" target="_blank">صفحتنا
+                      على إنستغرام</a></td>
+                </tr>
+
+                <tr>
+                  <th class="bg-primary text-white"><i class="bi bi-telegram"></i> تيلغرام</th>
+                  <td><a href="https://t.me" class="text-decoration-none text-primary" target="_blank">قناتنا على
+                      تيلغرام</a></td>
+
+                </tr>
+
+              </tbody>
+
+            </table>
+
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5595.085141948671!2d36.275721993280094!3d33.50508364878863!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1518e166219fc975%3A0xa9501798ee9b31df!2z2KfZhNis2KfZhdi52Kkg2KfZhNin2YHYqtix2KfYttmK2Kkg2KfZhNiz2YjYsdmK2KkgLSDZhdix2YPYsiDYp9mE2KrYudmE2YrZhSDZiNin2YTYqtiv2LHZitioINin2YTZhdiz2KrZhdixIExMQw!5e0!3m2!1sen!2s!4v1776724719066!5m2!1sen!2s"
+              class="w-100 h-100" style="border:0;" allowfullscreen="" loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+
+  <!-- Main End -->
+
+  <!-- Footer Start -->
+  <footer class=" text-white py-1">
+    <div class="d-flex justify-content-center align-items-center">
+
+      <span>جميع الحقوق محفوظة 2026 &copy;</span>
+      <a href="https://instagram.com" class="text-white mx-2 fs-5"><i class="bi bi-instagram"></i></a>
+      <a href="https://facebook.com" class="text-white mx-2 fs-5"><i class="bi bi-facebook"></i></a>
+      <a href="https://t.me" class="text-white mx-2 fs-5"><i class="bi bi-telegram"></i></a>
+
+    </div>
+
+  </footer>
+  <!-- Footer End -->
+
+  <script src="assets/js/main.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script>
+    const form = document.querySelector("#contact_form");
+    const email_box = document.querySelector("#contact_alret");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.querySelector("#name").value.trim();
+      const email = document.querySelector("#contact_input").value.trim();
+      const message = document.querySelector("#message").value.trim();
+      const email_pattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (name === "" || email === "" || message === "") {
+        email_box.className = "alert alert-danger mt-3";
+        email_box.innerText = " الرجاء تعبئة جميع الحقول قبل الإرسال!";
+        email_box.style.display = "block";
+      } else {
+        email_box.className = "alert alert-success mt-3";
+        email_box.innerText = " تم إرسال الرسالة بنجاح! شكرًا لتواصلك معنا.";
+        email_box.style.display = "block";
+        form.reset();
+      }
+    });
+
+    const phone_form = document.querySelector("#phone_form");
+    const phone_alret = document.querySelector("#phone_alret");
+
+    phone_form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      const name = document.querySelector("#phone_name").value.trim();
+      const number = document.querySelector("#phone_number").value.trim();
+      const message = document.querySelector("#phone_message").value.trim();
+      const phone_pattern = /^[0-9]{8,15}$/;
+      if (name === "" || number === "" || message === "") {
+        phone_alret.className = "alert alert-danger mt-3";
+        phone_alret.innerText = " يرجى تعبئة جميع الحقول قبل الإرسال!";
+        phone_alret.style.display = "block";
+      } else if (!phone_pattern.test(number)) {
+        phone_alret.className = "alert alert-danger mt-3";
+        phone_alret.innerText = " رقم الهاتف غير صالح! (الرجاء إدخال رقم صالح ).";
+        phone_alret.style.display = "block";
+      } else {
+        phone_alret.className = "alert alert-success mt-3";
+        phone_alret.innerText = " تم إرسال طلب الاتصال بنجاح! سنتواصل معك قريبًا.";
+        phone_alret.style.display = "block";
+        phone_form.reset();
+      }
+    });
+  </script>
 </body>
+
 </html>
