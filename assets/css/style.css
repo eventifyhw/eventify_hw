@@ -1,61 +1,84 @@
 body {
-    background-color: #E0E0FB !important;
+  background-color: #E0E0FB !important;
 }
 
 header {
-    background-color: #2E2FE3;
-    /* background-color: #B8A5DD; */
-    position: relative;
+  background-color: #2E2FE3;
+  position: relative;
 }
 
 header>nav {
-    background-color: #090934;
+  background-color: #090934;
 }
 
 footer {
-    background-color: #090934;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    display: inline;
+  background-color: #090934;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: inline;
 }
 
 .slid-container {
-    scroll-snap-type: x mandatory;
-    gap: 1rem;
+  scroll-snap-type: x mandatory;
+  gap: 1rem;
 }
 
 .card {
-    scroll-snap-align: start;
-    position: relative;
+  scroll-snap-align: start;
+  position: relative;
 }
 
 .card img {
-    object-fit: cover;
-    height: 250px;
+  object-fit: cover;
+  height: 250px;
 }
 
 .badge-new {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    background-color: red;
-    color: white;
-    padding: 3px 3px;
-    border-radius: 45px;
-    font-size: 0.8rem;
-    font-weight: bold;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: red;
+  color: white;
+  padding: 3px 3px;
+  border-radius: 45px;
+  font-size: 0.8rem;
+  font-weight: bold;
 }
 
+
+.ids {
+  margin-bottom: 4px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  font-size: small;
+  padding: 2px 6px;
+}
+
+/* Scroll to top button */
 #scroll_top {
-    width: 45px;
-    height: 45px;
-    font-size: 20px;
-    z-index: 1000;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    bottom: 10px;
+  width: 45px;
+  height: 45px;
+  font-size: 20px;
+  z-index: 1000;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  bottom: 10px;
 }
 
 #scroll_top:hover {
-    background-color: #151599;
+  background-color: #151599;
+}
+
+/* Dark mode styles */
+
+#toggle {
+  top: 20px;
+  right: 25px;
+  z-index: 1000;
+}
+
+body.dark {
+  background-color: #121212 !important;
+  color: #0c0c8f !important;
 }
