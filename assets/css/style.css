@@ -83,12 +83,14 @@ body.dark {
   color: #0c0c8f !important;
 }
 
-body.dark .card-body{
-        background-color: #333 !important;
-        color: #fff !important;
+body.dark .card-body {
+  background-color: #333 !important;
+  color: #fff !important;
 }
-body.dark .card-body>ul>li{
-        background-color: #555 !important;
-        color: #fff !important;
-        border: 1px solid #777 !important;
+
+body.dark .card-body>ul>li {
+  background-color: #555 !important;
+  color: #fff !important;
+  border: 1px solid #777 !important;
+
 }
